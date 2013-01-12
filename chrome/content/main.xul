@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window id="main" title="Kiosk UI" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.fullScreen = true;
+            window.moveTo(0, 0);
+            window.resizeTo(1280, 1024);
+            
+            window.open("chrome://kioskui/content/ads.xul", "ads", "chrome,resizable=no");
+        });
+        
+        window.ondragstart = function() {
+            return false;
+        };
+    </script>
+
+    <browser id="browser" type="content-targetable" src="http://localhost/" flex="1" />
+</window>
